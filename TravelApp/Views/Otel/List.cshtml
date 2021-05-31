@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Otel>
+@{
+    ViewData["Title"] = "List";
+}
+
+<div class="container mt-3">
+    <h2 style="color:crimson;text-align:center">
+        ~~OTELLER~~
+    </h2>
+    <hr />
+    <div>
+        <a class="btn btn-primary" href="/Otel/Create">Create</a>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            @if (Model.Count() > 0)
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Otel Resim</th>
+                            <th>Otel Ad</th>
+                            <th>Otel Açıklama</th>
+                            <th>Otel Telefon</th>
+                            <th>Otel Adres</th>
+                            <th>Otel Puan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.OtelId</td>
+                                <td>
+                                    <img src="~/img/Otel/@item.otelImage" width="100" />
+                                </td>
+                                <td>@item.otelAd</td>
+                                <td>@item.otelAciklama</td>
+                                <td>@item.otelTel </td>
+                                <td>@item.otelAdres</td>
+                                <td>@item.otelPuan</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" asp-controller="Otel" asp-action="Edit" asp-route-id="@item.OtelId">
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Otel" asp-action="Delete" asp-route-id="@item.OtelId">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    Otel Eklenmemiş.
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <br />
+    <hr />
+    <div>
+        <img src="~/img/@Model.BlogImage" alt="@Model.BlogTittle" style="display: block;margin-left: auto; margin-right: auto;width: 35%;">
+    </div>
+    <hr />
+    <br />
+    <div style="text-align:center">
+        <h4 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:crimson">@Model.BlogTittle</h4>
+        <br />
+        <hr />
+        
+        <p>@Model.BlogDescription</p>
+        
+        <hr />
+        <p>@Html.Raw(Model.BlogBody)</p>
+
+    </div>
+
+</div>

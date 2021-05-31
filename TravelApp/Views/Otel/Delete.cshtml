@@ -1,0 +1,15 @@
+﻿@model Otel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+<h4 style="text-align:center">
+    <b>@Model.otelAd</b> Otelini Silmek İstiyormusun
+</h4>
+<form asp-controller="Otel" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="OtelId" />
+    <div class="text-center">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>

@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body style="background-color:#bcb7b7">
+    <div class="row" style="background-color:#bcb7b7">
+        <div class="column container border-button">
+            <a asp-controller="Otel" asp-action="Index">
+                <img src="~/img/otel.jpg" style="width:100%">
+                <div class="centered"><b>OTEL</b></div>
+            </a>
+        </div>
+        <div class="column container border-button">
+            <a asp-controller="Blog" asp-action="Index">
+                <img src="~/img/blog.jpg" style="width:100%">
+                <div class="centered"><b>BLOG</b></div>
+            </a>
+        </div>
+        <div class="column container border-button">
+            <a asp-controller="Lokanta" asp-action="Index">
+                <img src="~/img/yemek.jpg" style="width:100%">
+                <div class="centered"><b>LOKANTA</b></div>
+            </a>
+        </div>
+    </div>
+    
+    <footer class="card-footer" style="background-color:#bcb7b7">
+        <div class="card-group">
+            <div class="card">
+
+                <div class="card-block" style="background-color:#bcb7b7">
+                    <h6 class="card-title" style="text-align:center">Sayfalar</h6>
+                    <hr />
+                    <p class="card-text" style="text-align:center">
+                        <a asp-controller="Home" asp-action="Index">ANA SAYFA</a>   |   <a asp-controller="Blog" asp-action="Index">BLOG</a> |   <a asp-controller="Otel" asp-action="Index">OTEL</a>  |
+                        <a asp-controller="Lokanta" asp-action="Index">LOKANTA</a>
+                    </p>
+                    <hr />
+
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-block" style="background-color:#bcb7b7">
+                    <h6 class="card-title" style="text-align:center">İletişim</h6>
+                    <p class="card-text" style="text-align:center"><i class="fa fa-phone" aria-hidden="true"> 0216 321 1415</i></p>
+                    <p class="card-text" style="text-align:center"><i class="fa fa-location-arrow" aria-hidden="true"> Teşvikiye Mahallesi Abdi İpekçi Caddesi Numara: 5 Şişli/İstanbul </i></p>
+                    <p class="card-text" style="text-align:center"><i class="fa fa-envelope" aria-hidden="true"> info@travelapp.com.tr </i></p>
+
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-block" style="background-color:#bcb7b7">
+                    <h6 class="card-title" style="text-align:center">Hakkımızda</h6>
+                    <p class="card-text" style="text-align:center; font-style:italic">Travel App bir seyehat öneri sitesidir. Buradan Lokanta, Otel önerileri alabilceğiniz gibi yazılan eğlenceli Bloglarla çok iyi vakit geçirebilirsiniz.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

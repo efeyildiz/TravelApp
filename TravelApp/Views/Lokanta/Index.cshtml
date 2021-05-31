@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Lokanta>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1></h1>
+<br />
+<div class="col-md-8 container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a asp-controller="Lokanta" asp-action="Index" asp-route-id="34">
+                    <img src="~/img/ist2.jpg" class="d-block w-100" style="height:300px" alt="...">
+                    <div class="carousel-caption">İstanbul Lokantaları</div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a asp-controller="Lokanta" asp-action="Index" asp-route-id="6">
+                    <img src="~/img/Ankara.jpg" class="d-block w-100" style="height:300px" alt="...">
+                    <div class="carousel-caption">Ankara Lokantaları</div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a asp-controller="Lokanta" asp-action="Index" asp-route-id="35">
+                    <img src="~/img/izmir.jpg" class="d-block w-100" style="height:300px" alt="...">
+                    <div class="carousel-caption">İzmir Lokantaları</div>
+                </a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<br />
+<hr />
+<h4 style="text-align:center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:#cf1818; font-style:italic">Son Eklenen Lokantalar</h4>
+<hr />
+<br />
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="~/img/Lokanta/@item.lokantaImage" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">@item.lokantaAd</h5>
+                    <p class="card-text"><i class="fa fa-align-justify aria-hidden="true"> @item.lokantaAciklama</i></p>
+                    <p class="card-text"><i class="fa fa-location-arrow" aria-hidden="true"> @item.lokantaAdres</i></p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"> @item.lokantaTel</i></p>
+                    <p class="card-text"><i class="fa fa-star" aria-hidden="true"> @item.lokantaPuan</i> </p>
+
+
+                </div>
+            </div>
+        </div>
+        <br />
+
+    }
+</div>
+<br />

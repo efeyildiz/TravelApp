@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Soru>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<div class="container" style="">
+    @foreach (var item in Model)
+    {
+        if (item.Cevap == null)
+        {
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">@item.soruTittle</h4>
+
+                    <p class="card-text" style="text-align:center">@Html.Raw(item.soruBody)</p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div align="right"><a class="card-link" asp-controller="Soru" asp-action="Edit" asp-route-id="@item.SoruId">Cevapla</a></div>
+                    }
+                </div>
+            </div>
+            <br />
+        }
+        else
+        {
+            <div class="card text-center">
+                <div class="card-block">
+                    <h4 class="card-title">@item.soruTittle</h4>
+
+                    <p class="card-text" style="text-align:center">@Html.Raw(item.soruBody)</p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div align="right"><a class="card-link" asp-controller="Soru" asp-action="Edit" asp-route-id="@item.SoruId">Cevabı Düzelt</a></div>
+                    }
+                </div>
+            </div>
+
+            <div class="card card-inverse card-warning mb-3 text-center">
+                <div class="card-block">
+                    <blockquote class="card-blockquote">
+                        <p>@Html.Raw(item.Cevap)</p>
+                    </blockquote>
+                </div>
+            </div>
+        }
+    }
+</div>

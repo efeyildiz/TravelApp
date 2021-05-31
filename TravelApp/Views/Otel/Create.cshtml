@@ -1,0 +1,55 @@
+﻿@model Otel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h2>Otel Ekle</h2>
+    <br />
+
+    <form asp-controller="Otel" asp-action="Create" method="post">
+
+        <input type="hidden" asp-for="OtelId" />
+        <div class="form-group">
+            <label asp-for="otelAd">Otel Adı</label>
+            <input asp-for="otelAd" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelTel">Otel Telefon Numarası</label>
+            <textarea asp-for="otelTel" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelAdres">Otel Adresi</label>
+            <textarea asp-for="otelAdres" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelImage">Otel Fotoğrafı</label>
+            <input asp-for="otelImage" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SehirId">Şehirler</label>
+            <select class="form-control" asp-for="SehirId" asp-items="ViewBag.Sehirs">
+                <option disabled selected value="">Şehir Seç</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelAciklama">Otel Açıklama</label>
+            <input asp-for="otelAciklama" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelPuan">Otel Puanı</label>
+            <input asp-for="otelPuan" class="form-control" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+
+</div>

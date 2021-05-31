@@ -1,0 +1,56 @@
+﻿@model Lokanta
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    
+    <h2>Lokanta Ekle</h2>
+    <br />
+
+    <form asp-controller="Lokanta" asp-action="Create" method="post">
+
+        <input type="hidden" asp-for="LokantaId" />
+        <div class="form-group">
+            <label asp-for="lokantaAd">Lokanta Ad</label>
+            <input asp-for="lokantaAd" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaTel">Lokanta Telefon</label>
+            <input asp-for="lokantaTel" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaAdres">Lokanta Adres</label>
+            <textarea asp-for="lokantaAdres" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaImage">Lokanta Fotoğraf</label>
+            <input asp-for="lokantaImage" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SehirId">Lokanta Şehiri</label>
+            <select class="form-control" asp-for="SehirId" asp-items="ViewBag.Sehirs">
+                <option disabled selected value="">Şehir Seç</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaAciklama">Lokanta Açıklama</label>
+            <input asp-for="lokantaAciklama" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaPuan"></label>
+            <input asp-for="lokantaPuan" class="form-control">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+    <br />
+</div>

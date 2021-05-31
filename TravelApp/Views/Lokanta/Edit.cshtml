@@ -1,0 +1,58 @@
+﻿@model Lokanta
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container">
+    <h2>Lokanta Düzenle</h2>
+    <br />
+
+    <form asp-controller="Lokanta" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="LokantaId" />
+        <input type="hidden" asp-for="lokantaImage" />
+
+        <div class="form-group">
+            <label asp-for="lokantaAd">Otelin Adı</label>
+            <input asp-for="lokantaAd" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaTel">Telefon Numarası</label>
+            <input asp-for="lokantaTel" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaAdres">Adres</label>
+            <textarea asp-for="lokantaAdres" class="form-control"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="SehirId">Şehir</label>
+            <select class="form-control" asp-for="SehirId" asp-items="ViewBag.Sehirs">
+                <option disabled selected value="">Şehir Seç</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaAciklama">Otel Açıklama</label>
+            <input asp-for="lokantaAciklama" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="lokantaPuan">Otel Puanı</label>
+            <input asp-for="lokantaPuan" class="form-control">
+        </div>
+        <div class="form-group">
+            <img src="~/img/lokanta/@Model.lokantaImage" width="120" />
+            <input type="file" name="file" id="file" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+

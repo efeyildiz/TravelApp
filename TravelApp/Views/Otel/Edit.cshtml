@@ -1,0 +1,57 @@
+﻿@model Otel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container">
+    <h2>Otel Düzenle</h2>
+    <br />
+
+    <form asp-controller="Otel" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="OtelId" />
+        <input type="hidden" asp-for="otelImage" />
+
+        <div class="form-group">
+            <label asp-for="otelAd">Otelin Adı</label>
+            <input asp-for="otelAd" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelTel">Otelin Telefon Numarası</label>
+            <textarea asp-for="otelTel" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelAdres">Otel Adresi</label>
+            <textarea asp-for="otelAdres" class="form-control"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="SehirId">Şehirler</label>
+            <select class="form-control" asp-for="SehirId" asp-items="ViewBag.Sehirs">
+                <option disabled selected value="">Şehir Seç</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelAciklama">Otel Açıklama</label>
+            <input asp-for="otelAciklama" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="otelPuan">Otel Puanı</label>
+            <input asp-for="otelPuan" class="form-control">
+        </div>
+        <div class="form-group">
+            <img src="~/img/otel/@Model.otelImage" width="120" />
+            <input type="file" name="file" id="file" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+

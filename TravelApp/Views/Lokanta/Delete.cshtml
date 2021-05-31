@@ -1,0 +1,17 @@
+﻿@model Lokanta
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 style="text-align:center">
+    <b>@Model.lokantaAd</b> İsimli Lokantayı Silmek İstiyormusun
+</h4>
+<form asp-controller="Lokanta" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="LokantaId" />
+    <div class="text-center">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+<br />
+
+

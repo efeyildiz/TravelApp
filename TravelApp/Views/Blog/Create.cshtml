@@ -1,0 +1,56 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Create";
+}
+@section scripts{
+<script src="~/lib/ckeditor/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace("BlogBody");
+</script>
+}
+<div class="container">
+    <h2>Blog Ekle</h2>
+    <br />
+
+    <form asp-controller="Blog" asp-action="Create" method="post">
+
+        <input type="hidden" asp-for="BlogId" />
+        <div class="form-group">
+            <label asp-for="BlogTittle">Blog Başlığı</label>
+            <input asp-for="BlogTittle" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BlogDescription">Blog Açıklaması</label>
+            <textarea asp-for="BlogDescription" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BlogBody">Blog Yazısı</label>
+            <textarea asp-for="BlogBody" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BlogImage">Blog Kapak Fotoğrafı</label>
+            <input asp-for="BlogImage" class="form-control">
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input asp-for="isShared" class="form-check-input">
+                Yazı Yayınlansın Mı?
+            </label>
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input asp-for="isSlider" class="form-check-input">
+                Yazı Slider'da Çıksın Mı?
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+
+</div>
+
